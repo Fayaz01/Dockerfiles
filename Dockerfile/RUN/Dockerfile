@@ -1,2 +1,5 @@
 FROM centos:8
-RUN sudo yum install nginx -y
+# Install necessary dependencies and repositories
+RUN yum -y install epel-release && \
+    yum -y update && \
+    yum -y install nginx
